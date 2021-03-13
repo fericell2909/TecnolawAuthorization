@@ -34,6 +34,6 @@ return [
 	],
 
 	'field' => [
-		'rut' => 'El :attribute no es válido para el sistema',
+		'document' => 'El :attribute no es válido para el sistema',
 	],
 ];

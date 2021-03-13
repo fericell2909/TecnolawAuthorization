@@ -25,14 +25,14 @@ class AuthController extends BaseController
 			'email' 				=> 'required|unique:'.$this->user->getTable().',email|email',
 			'password' 				=> 'required|min:6|max:15|confirmed', //disable confirmed
 			'password_confirmation' => 'required',
-			'rut' => [
+			'document' => [
 				// 'required',
 				'max:45',
-				'unique:'.$this->user->getTable().',rut',
+				'unique:'.$this->user->getTable().',document',
 				function ($attribute, $value, $fail) {
-					if (validaRut($value)===false) {
+					if (validadocument($value)===false) {
 						$fail(
-							trans('TecnolawAuth::auth.field.rut',['attribute'=>$attribute])
+							trans('TecnolawAuth::auth.field.document',['attribute'=>$attribute])
 						);
 					}
 				},
@@ -63,7 +63,7 @@ class AuthController extends BaseController
 			'paternal_surname' => '',
 			'email'		       => $request->email,
 			'password'	       => $request->password,
-			'rut'		       => $request->rut ?? null,
+			'document'		       => $request->document ?? null,
             'status'	       => 1, // enable
             'notifications' => $request->notifications ?? 0,
 		]);
@@ -76,7 +76,7 @@ class AuthController extends BaseController
 				'data'=>(object)[
 					'title' => 'Te has registrado de forma exitosa!',
 					'subject'=>'Registro exitoso! ['.env('GET_NAME_APP').']',
-					'body' => 'Binvenido a '.env('GET_NAME_APP').', espero  que disfrute todas la opciones que proporciona la plataforma, gracias por preferirnos!',
+					'body' => 'Binvenido a '.env('GET_NAME_APP').', espero  que disfdocumente todas la opciones que proporciona la plataforma, gracias por preferirnos!',
 					'link' => env('APP_URL_SITE'),
 					'textBtn' => 'ir al sitio',
 				],

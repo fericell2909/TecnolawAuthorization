@@ -21,7 +21,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
 	protected $fillable = [
 		'status',
-		'rut',
+		'document',
 		'name',
 		'paternal_surname',
 		'maternal_surname',
@@ -46,9 +46,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 	];
 	protected $appends = ['full_name'];
 
-	public function setRutAttribute($value)
+	public function setdocumentAttribute($value)
 	{
-		$this->attributes['rut'] = str_replace('.', '', $value);
+		$this->attributes['document'] = str_replace('.', '', $value);
 	}
 	public function setEmailAttribute($value)
     {
@@ -67,7 +67,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     	}
 
     }
-	public function getRutAttribute($value)
+	public function getdocumentAttribute($value)
 	{
 		return str_replace('.', '', $value);
 	}

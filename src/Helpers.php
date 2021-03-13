@@ -1,6 +1,6 @@
 <?php
 
-function validaRut($rut){
+function validadocument($document){
 	return true;
 }
 
