@@ -2,7 +2,7 @@
     "name": "tecnolaw/authorization",
     "description": "Authorization - Authentication - Roles by Tecnolaw",
     "type": "library",
-    "license": "UNLICENSED",
+    "license": "MIT",
     "authors": [
         {
             "name": "Marco Estrada Lopez",
