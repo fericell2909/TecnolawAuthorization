@@ -1,0 +1,39 @@
+{
+    "name": "tecnolaw/authorization",
+    "description": "Authorization - Authentication - Roles by Tecnolaw",
+    "type": "library",
+    "license": "UNLICENSED",
+    "authors": [
+        {
+            "name": "Marco Estrada Lopez",
+            "email": "info@devmarcoestrada.com",
+            "homepage": "https://devmarcoestrada.com",
+            "role": "Remote Software Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php" : ">=5.6.4",
+        "laravel/lumen-framework": "~6.0|~7.0|~8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tecnolaw\\Auth\\": "src/"
+        },
+        "files": [
+           "src/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tecnolaw\\Authorization\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tecnolaw\\Authorization\\AuthServiceProvider"
+            ]
+        }
+    }
+}
