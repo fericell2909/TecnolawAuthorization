@@ -57,27 +57,25 @@ class SeedersTecnolawPackageAuthorization extends Migration
         foreach ($list as $key => $role) {
             Role::create($role);
 		}
-		
 
-		$users=User::orderBy('id','DESC')->get;
-		
-
-		foreach (array_chunk($users,3000) as $user)  
-		{
 			RolesUsers::insert([
-				'user_id'=>$user->id,
+				'user_id'=>1,
+				'assigned_by'=>1,
+				'role_id'=> 1 // admin
+            ]);
+
+            RolesUsers::insert([
+				'user_id'=>2,
 				'assigned_by'=>1,
 				'role_id'=> 1 // admin
 			]);
-		}
 
 	}
 
 	public function down()
 	{
-		Schema::dropIfExists($this->tableName);
-	}
 
+	}
 	
 
 }
