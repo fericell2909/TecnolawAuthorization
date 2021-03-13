@@ -36,7 +36,7 @@ class CreateTecnolawUsersTable extends Migration
 			$table->integer('gender')->nullable();
 			$table->date('birth_date')->nullable();
 			$table->integer('nationality')->nullable();
-
+			$table->boolean('notifications')->default(false);
 			$table->bigInteger('fb_id')->nullable();
 			$table->text('fb_access_token')->nullable();
 

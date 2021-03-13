@@ -38,13 +38,6 @@ class AuthController extends BaseController
 				},
 			]
 		];
-		$rename=[
-			'name' => 'nombre',
-            /* 'lastname' => 'apellido', */
-            'email' => 'correo',
-            'password'=> 'contraseña',
-            'password_confirmation'=> 'confirmacion de contraseña',
-		];
         // $this->validate($request, $rules,[],$rename);
 
         $bresult_validation= false;
