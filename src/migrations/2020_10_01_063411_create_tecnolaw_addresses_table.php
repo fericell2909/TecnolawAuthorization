@@ -24,8 +24,6 @@ class CreateTecnolawAddressesTable extends Migration
 			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->unsignedBigInteger('user_id');
-			$table->unsignedBigInteger('commune_id');
-			$table->unsignedBigInteger('region_id');
 
 			$table->string('street', 200);
 			$table->string('number', 50);
@@ -42,18 +40,6 @@ class CreateTecnolawAddressesTable extends Migration
 			$table->index(['user_id'], 'fk_adresses_users_idx');
 			$table->foreign('user_id', 'fk_adresses_users_idx')
 				->references('id')->on('tecnolaw_users')
-				->onDelete('no action')
-				->onUpdate('no action');
-
-			$table->index(['commune_id'], 'fk_commune_id_communes_idx');
-			$table->foreign('commune_id', 'fk_commune_id_communes_idx')
-				->references('id')->on('tecnolaw_communes')
-				->onDelete('no action')
-				->onUpdate('no action');
-
-			$table->index(['region_id'], 'fk_region_id_regions_idx');
-			$table->foreign('region_id', 'fk_region_id_regions_idx')
-				->references('id')->on('tecnolaw_regions')
 				->onDelete('no action')
 				->onUpdate('no action');
 
