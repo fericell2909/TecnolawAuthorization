@@ -14,6 +14,12 @@ class AuthServiceProvider extends ServiceProvider
         $this->app->middleware([
             'TecnolawCross' => Middleware\CorsMiddleware::class,
         ]);
+
+        $this->app->configure('mail');
+        $this->app->alias('mailer', Illuminate\Mail\Mailer::class);
+        $this->app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);
+        $this->app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
+
         $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'TecnolawAuth');
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
